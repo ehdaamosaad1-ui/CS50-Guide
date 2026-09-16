@@ -3,7 +3,6 @@
 #include <vector>
 #include <stack>
 #include <deque>
-#include <limits>
 
 using namespace std;
 
@@ -31,11 +30,12 @@ int main() {
         // Validate numeric input to avoid infinite loop on bad input
         if (!(cin >> choice)) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(1000, '\n');
             cout << "-> Invalid input! Please enter a number between 1 and 6.\n";
             continue;
         }
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear buffer for getline
+
+        cin.ignore(1000, '\n'); // Clear buffer for getline
 
         switch (choice) {
             case 1: {
@@ -84,7 +84,7 @@ int main() {
                     string lastTask = completedStack.top();
                     completedStack.pop();
 
-                    // Re-insert task into the FRONT of the queue (fixed: was push_back before)
+                    // Re-insert task into the FRONT of the queue
                     taskQueue.push_front(lastTask);
                     cout << "-> Re-opened previous task: " << lastTask << endl;
                 }
