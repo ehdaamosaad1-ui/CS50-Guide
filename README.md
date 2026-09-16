@@ -1,10 +1,11 @@
-# CS50 Guide
+# CS50 Guide System
 
-A simple C++ program to help manage CS50 lab tasks, track task history, and store study notes.
+An interactive CLI C++ application designed to help students manage CS50 lab tasks, track completion history, and archive study notes efficiently.
 
-## Features & Data Structures
-- Lab Tasks (std::queue): Manages upcoming tasks in order (FIFO).
-- Undo Task (std::stack): Re-opens recently finished tasks (LIFO).
-- Notes Archive (std::vector): Stores terminal commands and notes.
-- Search: Quickly finds saved notes using Linear Search.
+## Key Features & Data Structures
 
+* **Lab Tasks Queue (`std::deque`):** Processes incoming lab tasks in First-In, First-Out (FIFO) order, while enabling front re-insertion for undo operations.
+* **Undo Task History (`std::stack`):** Tracks completed tasks in Last-In, First-Out (LIFO) order to easily restore the most recently finished task.
+* **Notes Archive (`std::vector`):** Dynamically stores study notes and terminal commands in contiguous memory.
+* **Search Functionality:** Uses Linear Search to quickly locate keywords within saved notes.
+* **Robust Input Handling:** Features `switch` control flow and string validation to ensure smooth execution and user interaction.
